@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Add New Recipe{% endblock %}
+{% block content %}
+    <h2>Add a New Recipe</h2>
+    <form method="post" class="add-form">
+        <input type="text" name="title" placeholder="Recipe Title" required>
+        <input type="text" name="category" placeholder="Category (e.g. Dessert, Dinner)" required>
+        <textarea name="ingredients" placeholder="Ingredients" rows="4" required></textarea>
+        <textarea name="instructions" placeholder="Instructions" rows="6" required></textarea>
+        <input type="text" name="image" placeholder="Image path (e.g. images/cake.jpg)" required>
+        <button type="submit">Submit Recipe</button>
+    </form>
+{% endblock %}

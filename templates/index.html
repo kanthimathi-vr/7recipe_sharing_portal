@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Home - Recipes{% endblock %}
+{% block content %}
+    <h2 class="fade-in">Browse Recipes</h2>
+
+    <form method="get" class="filter-form">
+        <label for="category">Filter by Category:</label>
+        <select name="category" onchange="this.form.submit()">
+            <option value="">All</option>
+            {% for cat in categories %}
+                <option value="{{ cat }}" {% if request.args.get('category') == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <div class="recipe-grid fade-in-up">
+        {% for recipe in recipes %}
+            <div class="recipe-card">
+                <img src="{{ url_for('static', filename=recipe.image) }}" alt="{{ recipe.title }}">
+                <h3><a href="{{ url_for('recipe', recipe_id=recipe.id) }}">{{ recipe.title }}</a></h3>
+                <p><strong>Category:</strong> {{ recipe.category }}</p>
+                <p><strong>Date:</strong> {{ recipe.date }}</p>
+            </div>
+        {% else %}
+            <p>No recipes found.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Bolognese",
+    "category": "Dinner",
+    "ingredients": "Spaghetti, Ground Beef, Tomato Sauce",
+    "instructions": "Cook spaghetti. Brown beef. Mix with sauce. Combine.",
+    "image": "images/spaghetti.jpeg",
+    "date": "July 20, 2025"
+  }
+]
